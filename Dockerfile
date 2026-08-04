@@ -26,4 +26,4 @@ RUN chown -R www-data:www-data /var/www/html/writable \
 EXPOSE 8080
 
 # Jalankan PHP built-in server, document root ke public/
-CMD ["php", "-S", "0.0.0.0:8080", "-t", "public"]
+CMD php -d variables_order=EGPCS -S 0.0.0.0:8080 -t public

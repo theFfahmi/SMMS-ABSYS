@@ -1,0 +1,167 @@
+/* Content Approval Specific Styles */
+
+.cp-stat-icon.blue { background: var(--cp-blue-m); color: var(--cp-blue); }
+.cp-stat-icon.orange { background: var(--cp-orange-l); color: var(--cp-orange); }
+.cp-stat-icon.green { background: var(--cp-green-l); color: var(--cp-green); }
+.cp-stat-icon.red { background: var(--cp-red-l); color: var(--cp-red); }
+
+.approval-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.approval-item {
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--cp-border);
+    display: grid;
+    grid-template-columns: 240px 1fr auto;
+    gap: 18px;
+    align-items: center;
+    transition: background .15s;
+}
+
+.approval-item:last-child { border-bottom: none; }
+.approval-item:hover { background: #fafbfc; }
+
+@media (max-width: 992px) {
+    .approval-item { grid-template-columns: 1fr; }
+}
+
+.approval-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.approval-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--cp-text);
+}
+
+.approval-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 11.5px;
+    color: var(--cp-muted);
+}
+
+.approval-meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.approval-platform {
+    display: flex;
+    gap: 6px;
+}
+
+.approval-platform span {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 5px;
+    background: var(--cp-blue-l);
+    color: var(--cp-blue);
+}
+
+.approval-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.approval-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 7px;
+    font-size: 11.5px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all .15s;
+}
+
+.approval-btn.approve {
+    background: var(--cp-green-l);
+    color: var(--cp-green);
+}
+
+.approval-btn.approve:hover {
+    background: #d1fae5;
+}
+
+.approval-btn.reject {
+    background: var(--cp-red-l);
+    color: var(--cp-red);
+}
+
+.approval-btn.reject:hover {
+    background: #fee2e2;
+}
+
+.approval-btn.request {
+    background: var(--cp-orange-l);
+    color: var(--cp-orange);
+}
+
+.approval-btn.request:hover {
+    background: #ffedd5;
+}
+
+.approval-status {
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+.approval-status.pending {
+    background: var(--cp-orange-l);
+    color: var(--cp-orange);
+}
+
+.approval-status.approved {
+    background: var(--cp-green-l);
+    color: var(--cp-green);
+}
+
+.approval-status.rejected {
+    background: var(--cp-red-l);
+    color: var(--cp-red);
+}
+
+.approval-status.revision {
+    background: var(--cp-blue-l);
+    color: var(--cp-blue);
+}
+
+/* Empty State */
+.approval-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--cp-muted);
+}
+
+.approval-empty i {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 16px;
+    opacity: .3;
+}
+
+.approval-empty h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--cp-text);
+}
+
+.approval-empty p {
+    font-size: 13px;
+    margin-bottom: 20px;
+}

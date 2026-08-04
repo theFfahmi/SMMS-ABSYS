@@ -1,0 +1,209 @@
+/* User Management Specific Styles */
+
+.tab-nav-wrap {
+    display: flex;
+    gap: 4px;
+    background: var(--cp-bg);
+    padding: 4px;
+    border-radius: 10px;
+}
+
+.tab-nav {
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--cp-muted);
+    border-radius: 7px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    transition: all .15s;
+}
+
+.tab-nav.active {
+    background: var(--cp-white);
+    color: var(--cp-blue);
+    box-shadow: 0 2px 6px rgba(0,0,0,.06);
+}
+
+/* User Table */
+.user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--cp-blue-l);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--cp-blue);
+    flex-shrink: 0;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--cp-text);
+}
+
+.user-email {
+    font-size: 11px;
+    color: var(--cp-muted);
+}
+
+.role-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 12px;
+}
+
+.role-badge.admin {
+    background: var(--cp-red-l);
+    color: var(--cp-red);
+}
+
+.role-badge.manager {
+    background: var(--cp-purple-l);
+    color: var(--cp-purple);
+}
+
+.role-badge.editor {
+    background: var(--cp-blue-l);
+    color: var(--cp-blue);
+}
+
+.role-badge.viewer {
+    background: var(--cp-bg);
+    color: var(--cp-muted);
+}
+
+.status-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 10px;
+}
+
+.status-badge.active {
+    background: var(--cp-green-l);
+    color: var(--cp-green);
+}
+
+.status-badge.inactive {
+    background: var(--cp-bg);
+    color: var(--cp-muted);
+}
+
+.status-badge.pending {
+    background: var(--cp-orange-l);
+    color: var(--cp-orange);
+}
+
+/* User Form */
+.user-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.user-form-grid.full {
+    grid-template-columns: 1fr;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #374151;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1.5px solid var(--cp-border);
+    border-radius: 10px;
+    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--cp-text);
+    outline: none;
+    transition: border .15s;
+    background: var(--cp-white);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--cp-blue);
+    box-shadow: 0 0 0 3px rgba(45, 108, 223, .08);
+}
+
+/* Permissions Grid */
+.permissions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    padding: 20px;
+}
+
+.permission-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    background: var(--cp-bg);
+    border-radius: 10px;
+}
+
+.permission-checkbox {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.permission-label {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--cp-text);
+}
+
+.permission-desc {
+    font-size: 11px;
+    color: var(--cp-muted);
+    margin-top: 2px;
+}
+
+/* Empty State */
+.users-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--cp-muted);
+}
+
+.users-empty i {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 16px;
+    opacity: .3;
+}
+
+.users-empty h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--cp-text);
+}
+
+.users-empty p {
+    font-size: 13px;
+    margin-bottom: 20px;
+}

@@ -9,9 +9,13 @@ RUN apt-get update && apt-get install -y \
 
 RUN docker-php-ext-install intl mysqli pdo_mysql zip
 
-# Fix Apache MPM conflict: disable all, enable only prefork
-RUN a2dismod mpm_event mpm_worker mpm_prefork 2>/dev/null; \
-    a2enmod mpm_prefork
+# Fix Apache MPM conflict: remove all mpm symlinks, keep only prefork
+RUN rm -f /etc/apache2/mods-enabled/mpm_event.load \
+          /etc/apache2/mods-enabled/mpm_event.conf \
+          /etc/apache2/mods-enabled/mpm_worker.load \
+          /etc/apache2/mods-enabled/mpm_worker.conf && \
+    ln -sf /etc/apache2/mods-available/mpm_prefork.load /etc/apache2/mods-enabled/mpm_prefork.load && \
+    ln -sf /etc/apache2/mods-available/mpm_prefork.conf /etc/apache2/mods-enabled/mpm_prefork.conf
 
 RUN a2enmod rewrite
 
